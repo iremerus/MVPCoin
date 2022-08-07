@@ -13,7 +13,7 @@ import retrofit2.Response
 
 class CoinRepos: CoinInterface.CoinModel {
     private var apiclient: JobServices?=null
-    private var coins: List<CoinModel> = listOf()
+    private var coins: MutableList<CoinModel> = mutableListOf()
 
     init {
         apiclient=CoinApi.client.create(JobServices::class.java)
@@ -24,19 +24,19 @@ class CoinRepos: CoinInterface.CoinModel {
      * @return List of coin model
      * gets the coin data from api
      */
-    override fun getCoins(presenter: CoinInterface.CoinPresenter): List<CoinModel> {
+    override fun getCoins(presenter: CoinInterface.CoinPresenter): MutableList<CoinModel> {
         val call = apiclient?.getCoinList()
-        call?.enqueue(object : Callback<List<CoinModel>>{
-            override fun onFailure(call: Call<List<CoinModel>>, t: Throwable) {
+        call?.enqueue(object : Callback<MutableList<CoinModel>>{
+            override fun onFailure(call: Call<MutableList<CoinModel>>, t: Throwable) {
                 Log.e("error",t.toString())
             }
 
             override fun onResponse(
-                call: Call<List<CoinModel>>,
-                response: Response<List<CoinModel>>
+                call: Call<MutableList<CoinModel>>,
+                response: Response<MutableList<CoinModel>>
             ) {
                 if (response.isSuccessful){
-                    coins= response.body()!!
+                    coins = response.body()!!
                     presenter.UIAutoUpdate()
                 }
             }
