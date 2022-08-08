@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity(), CoinInterface.CoinView {
         setContentView(binding.root)
 
         presenter = CoinPresenter(this)
-        coinAdapter = CoinAdapter(listOf(), this)
+        coinAdapter = CoinAdapter(mutableListOf(), this)
         rv_coins.adapter = coinAdapter
         rv_coins.layoutManager = LinearLayoutManager(this)
 

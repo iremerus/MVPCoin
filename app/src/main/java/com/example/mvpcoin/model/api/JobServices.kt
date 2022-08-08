@@ -7,5 +7,5 @@ import retrofit2.http.GET
 
 interface JobServices {
     @GET(Constant.COINS_URL)
-    fun getCoinList() : Call<List<CoinModel>>
+    fun getCoinList() : Call<MutableList<CoinModel>>
 }

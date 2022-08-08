@@ -13,7 +13,7 @@ class CoinPresenter(coinview: CoinInterface.CoinView):CoinInterface.CoinPresente
      * @return List of CoinModel
      * returns the coin data from the api
      */
-    override fun showCoins(): List<CoinModel> {
+    override fun showCoins(): MutableList<CoinModel> {
         return model.getCoins(this)
     }
 

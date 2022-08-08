@@ -4,7 +4,7 @@ import android.content.Context
 
 interface CoinInterface {
     interface CoinModel{
-        fun getCoins(presenter: CoinPresenter): List<com.example.mvpcoin.model.datamodel.CoinModel>
+        fun getCoins(presenter: CoinPresenter): MutableList<com.example.mvpcoin.model.datamodel.CoinModel>
         fun checkInternet(context: Context): Boolean
     }
     interface CoinView{
