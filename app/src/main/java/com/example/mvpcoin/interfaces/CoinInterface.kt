@@ -2,10 +2,11 @@ package com.example.mvpcoin.interfaces
 
 import android.content.Context
 import com.example.mvpcoin.model.datamodel.BaseModel
+import com.example.mvpcoin.model.datamodel.CoinModel
 
 interface CoinInterface {
     interface CoinModel{
-        fun getCoins(presenter: CoinPresenter): MutableList<com.example.mvpcoin.model.datamodel.CoinModel>
+        fun getCoins(presenter: CoinPresenter): List<com.example.mvpcoin.model.datamodel.CoinModel>
         fun checkInternet(context: Context): Boolean
     }
     interface CoinView{
