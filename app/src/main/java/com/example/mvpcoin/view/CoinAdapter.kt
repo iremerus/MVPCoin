@@ -62,7 +62,6 @@ class CoinAdapter(
      */
     fun updateData(coins: ArrayList<BaseModel>) {
         this.coins = coins
-        println("here" + coins)
         notifyDataSetChanged()
     }
 
