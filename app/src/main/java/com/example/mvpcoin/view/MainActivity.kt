@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mvpcoin.databinding.ActivityMainBinding
 import com.example.mvpcoin.interfaces.CoinInterface
+import com.example.mvpcoin.model.datamodel.BaseModel
 import com.example.mvpcoin.presenter.CoinPresenter
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity(), CoinInterface.CoinView {
      */
     override fun updateViewData() {
         if(presenter?.networkUI(this) == true){
-            coinAdapter.updateData(presenter?.showCoins()!!)
+            coinAdapter.updateData(presenter?.showCoins() as ArrayList<BaseModel>)
         } else {
             CustomDialogFragment().show(supportFragmentManager, "customDialog")
         }

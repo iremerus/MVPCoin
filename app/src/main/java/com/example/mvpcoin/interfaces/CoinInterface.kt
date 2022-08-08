@@ -1,6 +1,7 @@
 package com.example.mvpcoin.interfaces
 
 import android.content.Context
+import com.example.mvpcoin.model.datamodel.BaseModel
 
 interface CoinInterface {
     interface CoinModel{
@@ -12,7 +13,7 @@ interface CoinInterface {
     }
     interface CoinPresenter{
         fun UIAutoUpdate()
-        fun showCoins(): List<com.example.mvpcoin.model.datamodel.CoinModel>
+        fun showCoins(): List<BaseModel>
         fun networkUI(context: Context): Boolean
     }
 
